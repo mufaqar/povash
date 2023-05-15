@@ -22,65 +22,63 @@ if ( class_exists( '\Elementor\Plugin' ) AND $data->get( 'tpl-type' ) == 'e' AND
 ?>
 
 <?php if ( class_exists( '\Elementor\Plugin' )):?>
-	<?php do_action( 'povash_banner', $data );?>
+<?php do_action( 'povash_banner', $data );?>
 <?php else:?>
-        <section class="page-title" style="background-image: url(<?php echo esc_url( $data->get( 'banner' ) ); ?>);">
-            <div class="auto-container">
-                <div class="content-box clearfix">
-                    <div class="title-box centred">
-                        <h1><?php echo wp_kses( $data->get( 'title' ), true ); ?></h1>
-                    </div>
-                    <ul class="bread-crumb pull-right">
-                        <?php echo povash_the_breadcrumb(); ?>
-                    </ul>
-                </div>
+<section class="page-title" style="background-image: url(<?php echo esc_url( $data->get( 'banner' ) ); ?>);">
+    <div class="auto-container">
+        <div class="content-box clearfix">
+            <div class="title-box centred">
+                <h1><?php echo wp_kses( $data->get( 'title' ), true ); ?></h1>
             </div>
-        </section>
+
+        </div>
+    </div>
+</section>
 <!-- Page Title -->
 <?php endif;?>
 
 <!--Start blog area-->
 <section class="sidebar-page-container mrindex">
-	<div class="auto-container">
-		<div class="row clearfix">
-                
-                <!--Sidebar Start-->
-                <?php
+    <div class="auto-container">
+        <div class="row clearfix">
+
+            <!--Sidebar Start-->
+            <?php
 				if ( $data->get( 'layout' ) == 'left' ) {
 					do_action( 'povash_sidebar', $data );
 				}
 				?>
-                
-                <div class="content-side <?php echo esc_attr( $class ); ?>">
-                    
-                    <div class="thm-unit-test">
-                    
-                        <?php
+
+            <div class="content-side <?php echo esc_attr( $class ); ?>">
+
+                <div class="thm-unit-test">
+
+                    <?php
                             while ( have_posts() ) :
                                 the_post();
                                 povash_template_load( 'templates/blog/blog.php', compact( 'data' ) );
                             endwhile;
                             wp_reset_postdata();
                         ?>
-                        
-                    </div>
-                    <!--Pagination-->
-                    <div class="pagination-wrapper text-center">
-                        <?php povash_the_pagination( $wp_query->max_num_pages );?>
-                    </div>
+
                 </div>
-                
-                <!--Sidebar Start-->
-                <?php
+                <!--Pagination-->
+                <div class="pagination-wrapper text-center">
+                    <?php povash_the_pagination( $wp_query->max_num_pages );?>
+                </div>
+            </div>
+
+            <!--Sidebar Start-->
+            <?php
 				if ( $data->get( 'layout' ) == 'right' ) {
 					do_action( 'povash_sidebar', $data );
 				}
 				?>
-                
-            </div>
+
         </div>
-    </section> 
-    <!--End blog area--> 
-	<?php
+    </div>
+</section>
+<!--End blog area-->
+<?php
 }
 get_footer();
