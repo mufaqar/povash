@@ -24,49 +24,47 @@ if ( class_exists( '\Elementor\Plugin' ) && $data->get( 'tpl-type' ) == 'e') {
 
 } else {
 	?>
- <!--Page Title-->
-        <section class="page-title" style="background-image: url(<?php echo esc_url( $data->get( 'banner' ) ); ?>);">
-            <div class="auto-container">
-                <div class="content-box clearfix">
-                    <div class="title-box centred">
-                        <h1><?php echo wp_kses( $data->get( 'title' ), true ); ?></h1>
-                    </div>
-                    <ul class="bread-crumb pull-right">
-                        <?php echo povash_the_breadcrumb(); ?>
-                    </ul>
-                </div>
+<!--Page Title-->
+<section class="page-title" style="background-image: url(<?php echo esc_url( $data->get( 'banner' ) ); ?>);">
+    <div class="auto-container">
+        <div class="content-box clearfix">
+            <div class="title-box centred">
+                <h1><?php echo wp_kses( $data->get( 'title' ), true ); ?></h1>
             </div>
-        </section>
-        <!--End Page Title-->
+
+        </div>
+    </div>
+</section>
+<!--End Page Title-->
 
 
 <section class="sidebar-page-container mrsingle">
-	<div class="auto-container">
-		<div class="row clearfix">
-        	<?php
+    <div class="auto-container">
+        <div class="row clearfix">
+            <?php
 				if ( $data->get( 'layout' ) == 'left' ) {
 					do_action( 'povash_sidebar', $data );
 				}
 			?>
             <div class="content-side <?php echo esc_attr( $class ); ?>">
-            	
-				<?php while ( have_posts() ) : the_post(); ?>
-				
-                    <div <?php post_class(); ?>>
-						<?php povash_template_load( 'templates/blog-single/single-content.php', compact( 'options', 'data' ) ); ?>
-					</div>
-				<?php endwhile; ?>
-              
+
+                <?php while ( have_posts() ) : the_post(); ?>
+
+                <div <?php post_class(); ?>>
+                    <?php povash_template_load( 'templates/blog-single/single-content.php', compact( 'options', 'data' ) ); ?>
+                </div>
+                <?php endwhile; ?>
+
             </div>
-        	<?php
+            <?php
 				if ( $data->get( 'layout' ) == 'right' ) {
 					do_action( 'povash_sidebar', $data );
 				}
 			?>
         </div>
     </div>
-</section> 
-<!--End blog area--> 
+</section>
+<!--End blog area-->
 
 <?php
 }
