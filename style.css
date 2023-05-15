@@ -67,5 +67,5 @@
   display: none;
 }
 .page-title {
-  padding-bottom: 10px;
+  padding-bottom: 10px !important;
 }
