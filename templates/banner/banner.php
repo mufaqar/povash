@@ -17,17 +17,19 @@ if ( $data->get( 'enable_banner' ) AND $data->get( 'banner_type' ) == 'e' AND ! 
 ?>
 <?php if ( $data->get( 'enable_banner' ) ) : ?>
 
-<!--Page Title-->
-<section class="page-title" style="background-image: url(<?php echo esc_url( $data->get( 'banner' ) ); ?>);">
-    <div class="auto-container">
-        <div class="content-box clearfix">
-            <div class="title-box centred">
-                <h1><?php echo wp_kses( $data->get( 'title' ), true ); ?></h1>
-            </div>
-
-        </div>
-    </div>
-</section>
-<!--End Page Title-->
-
+	<!--Page Title-->
+	<section class="page-title" style="background-image: url(<?php echo esc_url( $data->get( 'banner' ) ); ?>);">
+		<div class="auto-container">
+			<div class="content-box clearfix">
+				<div class="title-box centred">
+					<h1><?php echo wp_kses( $data->get( 'title' ), true ); ?></h1>
+				</div>
+				<ul class="bread-crumb">
+					<?php echo povash_the_breadcrumb(); ?>
+				</ul>
+			</div>
+		</div>
+	</section>
+	<!--End Page Title-->
+	
 <?php endif; ?>

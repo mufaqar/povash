@@ -16,19 +16,21 @@ $class = ( !$layout || $layout == 'full' ) ? 'col-xs-12 col-sm-12 col-md-12' : '
 ?>
 
 <?php if ( class_exists( '\Elementor\Plugin' )):?>
-<?php do_action( 'povash_banner', $data );?>
+	<?php do_action( 'povash_banner', $data );?>
 <?php else:?>
 <!-- Page Title -->
-<section class="page-title" style="background-image: url(<?php echo esc_url( $data->get( 'banner' ) ); ?>);">
-    <div class="auto-container">
-        <div class="content-box clearfix">
-            <div class="title-box centred">
-                <h1><?php echo wp_kses( $data->get( 'title' ), true ); ?></h1>
+        <section class="page-title" style="background-image: url(<?php echo esc_url( $data->get( 'banner' ) ); ?>);">
+            <div class="auto-container">
+                <div class="content-box clearfix">
+                    <div class="title-box centred">
+                        <h1><?php echo wp_kses( $data->get( 'title' ), true ); ?></h1>
+                    </div>
+                    <ul class="bread-crumb pull-right">
+                        <?php echo povash_the_breadcrumb(); ?>
+                    </ul>
+                </div>
             </div>
-
-        </div>
-    </div>
-</section>
+        </section>
 <!-- Page Title -->
 <?php endif;?>
 
@@ -36,19 +38,19 @@ $class = ( !$layout || $layout == 'full' ) ? 'col-xs-12 col-sm-12 col-md-12' : '
 <section class="sidebar-page-container mrsingle">
     <div class="auto-container">
         <div class="row clearfix">
-
-            <?php
+		
+        	<?php
             if ( $data->get( 'layout' ) == 'left' ) {
                 do_action( 'povash_sidebar', $data );
             }
             ?>
             <div class="content-side <?php echo esc_attr( $class ); ?>">
                 <div class="thm-unit-test">
-
-                    <?php while ( have_posts() ): the_post(); ?>
-                    <?php the_content(); ?>
+                    
+					<?php while ( have_posts() ): the_post(); ?>
+                        <?php the_content(); ?>
                     <?php endwhile; ?>
-
+                    
                     <div class="clearfix"></div>
                     <?php
                     $defaults = array(
@@ -67,8 +69,8 @@ $class = ( !$layout || $layout == 'full' ) ? 'col-xs-12 col-sm-12 col-md-12' : '
                 do_action( 'povash_sidebar', $data );
             }
             ?>
-
+        
         </div>
-    </div>
+	</div>
 </section><!-- blog section with pagination -->
 <?php get_footer(); ?>

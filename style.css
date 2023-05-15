@@ -1,11 +1,11 @@
 /*
- * Theme Name: Power Wahinng Theme
- * Author: Mufaqar
- * Author URI: https://mufaqar.com
- * Theme URI: https://mufaqar.com
+ * Theme Name: Povash
+ * Author: template_path
+ * Author URI: https://themeforest.net/user/template_path
+ * Theme URI: http://july.commonsupport.com/povash/
  * Description: This is Power Wash and Cleaning Services WordPress Theme.
- * Version: 5.0.2
- * License: Power Washing
+ * Version: 3.0.0
+ * License: This theme or plugin is comprised of two parts. (1) the PHP code and integrated HTML are licensed under the General Public License (GPL). You will find a copy of the GPL in the same directory as this text file. (2) All other parts, but not limited to the CSS code, images, and design are licensed according to the license purchased from Envato.  Read more about licensing here: http://themeforest.net/licenses
  * License URI: license.txt
  * Tags: blog, two-columns, left-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-logo, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready
  * Text Domain: povash
@@ -13,59 +13,52 @@
  * Requires PHP: 7.0
 */
 
-.main-header .logo-box {
-  padding: 10px 85px 15px 0px;
+
+
+.main-header .logo-box{
+	padding: 10px 85px 15px 0px;
 }
 .main-header .sticky-header .logo-box {
-  padding: 10px 85px 15px 0px;
+    padding: 10px 85px 15px 0px;
 }
-.sticky-header .logo-box .logo {
-  width: 70%;
+.sticky-header .logo-box .logo{
+	width: 70%;
 }
 .main-footer .footer-top .top-inner .footer-logo .logo {
-  width: 110px;
+    width: 110px;
 }
 .main-footer .footer-top .top-inner .footer-logo {
-  padding: 10px 85px 15px 0px;
+    padding: 10px 85px 15px 0px;
 }
 
-#_form .elementor-field-subgroup > span:hover {
-  background: #fafafa;
+#_form .elementor-field-subgroup>span:hover {
+	background: #fafafa;
 }
-#_form .elementor-field-subgroup > span {
-  border: 1px solid #f2f2f2;
-  border-top: none;
-  padding: 12px;
-  cursor: pointer;
-}
-
-#_form .elementor-field-subgroup > span:first-child {
-  border-top: 1px solid #f2f2f2;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+#_form .elementor-field-subgroup>span {
+	border: 1px solid #f2f2f2;
+	border-top:none;
+	padding: 12px;
+	cursor:pointer;
 }
 
-#_form .elementor-field-subgroup > span:last-child {
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+#_form .elementor-field-subgroup>span:first-child{
+	border-top: 1px solid #f2f2f2;
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;
 }
 
-.elementor-field-textual {
-  padding: 14px !important;
-}
-.exp .progress-inner {
-  display: none;
-}
-.service-details-content .inner-box ul.list-item li {
-  padding-left: 0px !important;
-}
-.service-details-content .inner-box ul.list-item li i {
-  display: none !important;
+#_form .elementor-field-subgroup>span:last-child{
+	border-bottom-left-radius:10px;
+	border-bottom-right-radius:10px;
 }
 
-.subscribe-form {
-  display: none;
+.elementor-field-textual{
+	padding 14px !important;
 }
-.page-title {
-  padding-bottom: 10px !important;
+.exp .progress-inner{
+	display: none;
 }
+.service-details-content .inner-box ul.list-item li  { padding-left:0px  !important;}
+.service-details-content .inner-box ul.list-item li i { display:none !important;}
+
+.subscribe-form { display:none}

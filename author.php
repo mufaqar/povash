@@ -1,6 +1,6 @@
 <?php
 /**
- * Tag Main File.
+ * Blog Main File.
  *
  * @package POVASH
  * @author  Theme Author
@@ -9,7 +9,7 @@
 
 get_header();
 global $wp_query;
-$data  = \POVASH\Includes\Classes\Common::instance()->data( 'tag' )->get();
+$data  = \POVASH\Includes\Classes\Common::instance()->data( 'author' )->get();
 $layout = $data->get( 'layout' );
 $sidebar = $data->get( 'sidebar' );
 $layout = ( $layout ) ? $layout : 'right';
@@ -20,10 +20,11 @@ if ( class_exists( '\Elementor\Plugin' ) AND $data->get( 'tpl-type' ) == 'e' AND
 	echo Elementor\Plugin::instance()->frontend->get_builder_content_for_display( $data->get( 'tpl-elementor' ) );
 } else {
 ?>
-
-<?php if ( class_exists( '\Elementor\Plugin' )):?>
-	<?php do_action( 'povash_banner', $data );?>
-<?php else:?>
+	
+    <?php if ( class_exists( '\Elementor\Plugin' )):?>
+		<?php do_action( 'povash_banner', $data );?>
+    <?php else:?>
+    <!-- Page Title -->
         <section class="page-title" style="background-image: url(<?php echo esc_url( $data->get( 'banner' ) ); ?>);">
             <div class="auto-container">
                 <div class="content-box clearfix">
@@ -36,10 +37,10 @@ if ( class_exists( '\Elementor\Plugin' ) AND $data->get( 'tpl-type' ) == 'e' AND
                 </div>
             </div>
         </section>
-<!-- Page Title -->
-<?php endif;?>
-
-<!--Start blog area-->
+    <!-- Page Title -->
+    <?php endif;?>
+    
+   <!--Start blog area-->
 <section class="sidebar-page-container mrindex">
 	<div class="auto-container">
 		<div class="row clearfix">

@@ -216,10 +216,10 @@ function povash_twitter( $args = array() ) {
 	$screen   = povash_set( $args, 'screen_name', 'WordPress' );
 	$settings = array( 'count' => $count, 'screen_name' => $screen );
 	ob_start(); ?>
-jQuery(document).ready(function ($) {
-$('<?php echo esc_js( $selector ); ?>').tweets(<?php echo json_encode( $settings ); ?>);
-});
-<?php $jsOutput = ob_get_contents();
+	jQuery(document).ready(function ($) {
+	$('<?php echo esc_js( $selector ); ?>').tweets(<?php echo json_encode( $settings ); ?>);
+	});
+	<?php $jsOutput = ob_get_contents();
 	ob_end_clean();
 	wp_add_inline_script( 'twitter-tweets', $jsOutput );
 }
@@ -388,7 +388,7 @@ function povash_list_comments( $comment, $args, $depth ) {
 	wp_enqueue_script( 'comment-reply' );
 	$GLOBALS['comment'] = $comment;
 	$like               = (int) get_comment_meta( $comment->comment_ID, 'like_it', true ); ?>
-<div class="st-comment-item">
+	<div class="st-comment-item">
     <div class="comment-box">
         <div <?php comment_class('comment');?> id="comment-<?php comment_ID(); ?>">
             <?php if ( get_avatar( $comment ) ) : ?>
@@ -396,23 +396,22 @@ function povash_list_comments( $comment, $args, $depth ) {
                 <?php echo wp_kses( get_avatar( $comment, 80 ), $allowed_html ); ?>
             </div>
             <?php endif; ?>
-
+            
             <div class="comment-inner">
-                <div class="comment-info"><?php echo wp_kses( get_comment_author(), $allowed_html ); ?>, <span
-                        class="date"><?php echo get_comment_date( 'd M Y', get_comment_ID() ); ?></span></div>
+                <div class="comment-info"><?php echo wp_kses( get_comment_author(), $allowed_html ); ?>, <span class="date"><?php echo get_comment_date( 'd M Y', get_comment_ID() ); ?></span></div>
                 <div class="text"><?php comment_text(); ?></div>
-
-                <?php $myclass = 'reply';
+                
+					<?php $myclass = 'reply';
 					echo preg_replace( '/comment-reply-link/', 'comment-reply-link ' . $myclass, get_comment_reply_link( array_merge( $args, array(
 						'depth'      => $depth,
 						'reply_text' => '<div class="reply-comment-btn">' . esc_html( 'Reply', 'rexar' ).'</div>',
 						'max_depth'  => $args['max_depth'],
 					) ) ), 10 );
 				?>
+                </div>
             </div>
+        
         </div>
-
-    </div>
     <?php
 }
 
@@ -509,7 +508,7 @@ function povash_comment_form( $args = array(), $post_id = null ) {
 	$args = wp_parse_args( $args, apply_filters( 'comment_form_defaults', $defaults ) );
 	$args = array_merge( $defaults, $args );
 	if ( comments_open( $post_id ) ) : ?>
-    <?php
+		<?php
 		/**
 		 * Fires before the comment form.
 		 *
@@ -517,8 +516,8 @@ function povash_comment_form( $args = array(), $post_id = null ) {
 		 */
 		do_action( 'comment_form_before' );
 		?>
-    <div id="respond" class="comment-form">
-        <?php
+        <div id="respond" class="comment-form">
+            <?php
             echo wp_kses( $args['title_reply_before'], $allowed_html );
             comment_form_title( $args['title_reply'], $args['title_reply_to'] );
             echo wp_kses( $args['cancel_reply_before'], $allowed_html );
@@ -534,12 +533,9 @@ function povash_comment_form( $args = array(), $post_id = null ) {
                  */
                 do_action( 'comment_form_must_log_in_after' );
             else : ?>
-        <form action="<?php echo esc_url( $args['action'] ); ?>" method="post"
-            id="<?php echo esc_attr( $args['id_form'] ); ?>"
-            class="<?php echo esc_attr( $args['class_form'] ); ?> add-comment-form"
-            <?php echo wp_kses( $html5, $allowed_html ) ? ' novalidate' : ''; ?>>
-            <div class="row">
-                <?php
+                <form action="<?php echo esc_url( $args['action'] ); ?>" method="post" id="<?php echo esc_attr( $args['id_form'] ); ?>" class="<?php echo esc_attr( $args['class_form'] ); ?> add-comment-form"<?php echo wp_kses( $html5, $allowed_html ) ? ' novalidate' : ''; ?>>
+                    <div class="row">
+                        <?php
                         /**
                          * Fires at the top of the comment form, inside the form tag.
                          *
@@ -585,7 +581,7 @@ function povash_comment_form( $args = array(), $post_id = null ) {
                         $comment_field_keys = array_diff( array_keys( $comment_fields ), array( 'comment' ) );
                         $first_field        = reset( $comment_field_keys );
                         $last_field         = end( $comment_field_keys ); ?>
-                <?php foreach ( $comment_fields as $name => $field ) {
+                        <?php foreach ( $comment_fields as $name => $field ) {
                             if ( 'comment' === $name ) {
                                 /**
                                  * Filters the content of the comment textarea field for display.
@@ -625,7 +621,7 @@ function povash_comment_form( $args = array(), $post_id = null ) {
                                 }
                             }
                         } ?>
-                <?php $submit_button = sprintf(
+                        <?php $submit_button = sprintf(
                             $args['submit_button'],
                             esc_attr( $args['name_submit'] ),
                             esc_attr( $args['id_submit'] ),
@@ -666,11 +662,11 @@ function povash_comment_form( $args = array(), $post_id = null ) {
                          */
                         do_action( 'comment_form', $post_id );
                         ?>
-            </div>
-        </form>
-        <?php endif; ?>
-    </div>
-    <?php
+                    </div>
+                </form>
+            <?php endif; ?>
+        </div>
+		<?php
 		/**
 		 * Fires after the comment form.
 		 *
