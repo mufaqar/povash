@@ -67,7 +67,7 @@ if ( ! function_exists( 'wp_body_open' ) ) {
 
             <nav class="menu-box">
                 <figure class="nav-logo"> <img src="<?php echo esc_url($image_logo2); ?>"
-                        alt="<?php esc_attr_e('Awesome Image', 'povash'); ?>"></figure>
+                        alt="<?php esc_attr_e('Logo', 'povash'); ?>"></figure>
 
                 <div class="menu-outer">
                     <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
