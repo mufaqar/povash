@@ -67,7 +67,7 @@ if ( ! function_exists( 'wp_body_open' ) ) {
 
             <nav class="menu-box">
                 <figure class="nav-logo"> <img src="<?php echo esc_url($image_logo2); ?>"
-                        alt="<?php esc_attr_e('Logo', 'povash'); ?>"></figure>
+                        alt="<?php esc_attr_e('power Wash logo', 'povash'); ?>" title="power Wash logo" width="123px" height="98px" ></figure>
                 <div class="menu-outer">
                     <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
                 </div>
