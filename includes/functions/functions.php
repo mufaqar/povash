@@ -194,7 +194,7 @@ function povash_logo( $logo_type, $image_logo, $logo_dimension, $logo_text, $log
 		if ( povash_set( $image_logo, 'url' ) ) {
 			$logo_output = '<a href="' . home_url( '/' ) . '" title="' . get_bloginfo( 'name' ) . '"><img src="' . esc_url( povash_set( $image_logo, 'url' ) ) . '" alt="'.esc_attr__('Power Wash Logo', 'povash').'" title="'.esc_attr__('Power Wash Logo', 'povash').'"  " style="' . $logo_image_style . '" /></a>';
 		} else {
-			$logo_output = '<a href="' . esc_url(home_url('/')) . '" title="' . get_bloginfo( 'name' ) . '"><img src="' . get_template_directory_uri() . '/assets/images/logo.png' . '" width="auto" height="auto" alt="'.esc_attr__('logo', 'povash').'" style="' . $logo_image_style . '" /></a>';
+			$logo_output = '<a href="' . esc_url(home_url('/')) . '" title="' . get_bloginfo( 'name' ) . '"><img src="' . get_template_directory_uri() . '/assets/images/logo.png' . '" width="123px" height="98px" alt="'.esc_attr__('logo', 'povash').'" style="' . $logo_image_style . '" /></a>';
 		}
 	}
 
