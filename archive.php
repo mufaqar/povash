@@ -19,6 +19,7 @@ if ( class_exists( '\Elementor\Plugin' ) AND $data->get( 'tpl-type' ) == 'e' AND
 	echo Elementor\Plugin::instance()->frontend->get_builder_content_for_display( $data->get( 'tpl-elementor' ) );
 } else {
 ?>
+<link rel="canonical" href="https://professionalpowerwashing.co.uk/our-services/" class="yoast-seo-meta-tag" />
 
 <?php if ( class_exists( '\Elementor\Plugin' )):?>
 <?php do_action( 'povash_banner', $data );?>
