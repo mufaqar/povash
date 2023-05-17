@@ -192,9 +192,9 @@ function povash_logo( $logo_type, $image_logo, $logo_dimension, $logo_text, $log
 		$logo_image_style .= povash_set( $logo_dimension, 'width' ) ? ' width:' . povash_set( $logo_dimension, 'width' ) . ';' : '';
 		$logo_image_style .= povash_set( $logo_dimension, 'height' ) ? ' height:' . ( povash_set( $logo_dimension, 'height' ) ) . ';' : '';
 		if ( povash_set( $image_logo, 'url' ) ) {
-			$logo_output = '<a href="' . home_url( '/' ) . '" title="' . get_bloginfo( 'name' ) . '"><img src="' . esc_url( povash_set( $image_logo, 'url' ) ) . '" width="123px" height="98px" loading="lazy" alt="'.esc_attr__('Power Wash Logo', 'povash').'" title="'.esc_attr__('Power Wash Logo', 'povash').'"  style="' . $logo_image_style . '" /></a>';
+			$logo_output = '<a href="' . home_url( '/' ) . '" title="' . get_bloginfo( 'name' ) . '"><img src="' . esc_url( povash_set( $image_logo, 'url' ) ) . '" width="123px" height="98px" loading="lazy" alt="'.esc_attr__('Power Wash Logo', 'povash').'" title="'.esc_attr__('Power Wash Logo', 'povash').'"  /></a>';
 		} else {
-			$logo_output = '<a href="' . esc_url(home_url('/')) . '" title="' . get_bloginfo( 'name' ) . '"><img src="' . get_template_directory_uri() . '/assets/images/logo.png' . '" width="123px" height="98px" loading="lazy" alt="'.esc_attr__('logo', 'povash').'" style="' . $logo_image_style . '" /></a>';
+			$logo_output = '<a href="' . esc_url(home_url('/')) . '" title="' . get_bloginfo( 'name' ) . '"><img src="' . get_template_directory_uri() . '/assets/images/logo.png' . '" width="123px" height="98px" loading="lazy" alt="'.esc_attr__('logo', 'povash').'" /></a>';
 		}
 	}
 
